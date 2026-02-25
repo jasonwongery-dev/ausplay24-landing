@@ -5,43 +5,78 @@ backend:
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
+publish_mode: simple
+
 collections:
   - name: "landing"
     label: "Landing Content"
     files:
-      - file: "content/landing.json"
+      - name: "settings"
         label: "Landing Settings"
-        name: "landing_settings"
+        file: "content/landing.json"
+        format: "json"
         fields:
-          - label: "AFL"
-            name: "AFL"
-            widget: "object"
-            fields:
-              - { label: "Brand Name", name: "name", widget: "string" }
-              - { label: "Sub Title", name: "sub", widget: "string" }
-              - { label: "Hero Title", name: "heroTitle", widget: "string" }
-              - { label: "Hero Lead", name: "heroLead", widget: "text" }
-              - { label: "WhatsApp Link", name: "whatsapp", widget: "string" }
-              - { label: "Register Link", name: "register", widget: "string" }
 
-          - label: "DFL"
-            name: "DFL"
-            widget: "object"
-            fields:
-              - { label: "Brand Name", name: "name", widget: "string" }
-              - { label: "Sub Title", name: "sub", widget: "string" }
-              - { label: "Hero Title", name: "heroTitle", widget: "string" }
-              - { label: "Hero Lead", name: "heroLead", widget: "text" }
-              - { label: "WhatsApp Link", name: "whatsapp", widget: "string" }
-              - { label: "Register Link", name: "register", widget: "string" }
+          - label: "Default Brand Key"
+            name: "defaultBrandKey"
+            widget: "string"
 
-          - label: "LFL"
-            name: "LFL"
+          - label: "Global Settings"
+            name: "global"
             widget: "object"
             fields:
+              - { label: "Brand Sub", name: "brandSub", widget: "string" }
+              - { label: "Remark", name: "remark", widget: "text" }
+
+          - label: "Brands"
+            name: "brands"
+            widget: "list"
+            summary: "{{fields.key}} - {{fields.name}}"
+            fields:
+
+              - { label: "Key (AFL/DFL/LFL/NEW)", name: "key", widget: "string" }
               - { label: "Brand Name", name: "name", widget: "string" }
               - { label: "Sub Title", name: "sub", widget: "string" }
-              - { label: "Hero Title", name: "heroTitle", widget: "string" }
-              - { label: "Hero Lead", name: "heroLead", widget: "text" }
-              - { label: "WhatsApp Link", name: "whatsapp", widget: "string" }
-              - { label: "Register Link", name: "register", widget: "string" }
+
+              - label: "Theme Colors"
+                name: "colors"
+                widget: "object"
+                fields:
+                  - { label: "brand0", name: "brand0", widget: "string" }
+                  - { label: "brand1", name: "brand1", widget: "string" }
+                  - { label: "brand2", name: "brand2", widget: "string" }
+                  - { label: "accent", name: "accent", widget: "string" }
+
+              - label: "Links"
+                name: "links"
+                widget: "object"
+                fields:
+                  - { label: "Register Link", name: "register", widget: "string" }
+                  - { label: "WhatsApp Link", name: "whatsapp", widget: "string" }
+
+              - label: "Hero Section"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - { label: "Hero Title", name: "title", widget: "string" }
+                  - { label: "Hero Lead", name: "lead", widget: "text" }
+                  - { label: "Hero Image", name: "heroImg", widget: "image" }
+
+              - label: "Mini Strip (3 items)"
+                name: "mini"
+                widget: "list"
+                min: 3
+                max: 3
+                fields:
+                  - { label: "Left Text", name: "left", widget: "string" }
+                  - { label: "Right Text", name: "right", widget: "string" }
+
+              - label: "Featured Bonuses (3 cards)"
+                name: "bonuses"
+                widget: "list"
+                min: 3
+                max: 3
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "desc", widget: "string" }
+                  - { label: "Image", name: "img", widget: "image" }
