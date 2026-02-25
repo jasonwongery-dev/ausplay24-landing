@@ -1,0 +1,47 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "landing"
+    label: "Landing Content"
+    files:
+      - file: "content/landing.json"
+        label: "Landing Settings"
+        name: "landing_settings"
+        fields:
+          - label: "AFL"
+            name: "AFL"
+            widget: "object"
+            fields:
+              - { label: "Brand Name", name: "name", widget: "string" }
+              - { label: "Sub Title", name: "sub", widget: "string" }
+              - { label: "Hero Title", name: "heroTitle", widget: "string" }
+              - { label: "Hero Lead", name: "heroLead", widget: "text" }
+              - { label: "WhatsApp Link", name: "whatsapp", widget: "string" }
+              - { label: "Register Link", name: "register", widget: "string" }
+
+          - label: "DFL"
+            name: "DFL"
+            widget: "object"
+            fields:
+              - { label: "Brand Name", name: "name", widget: "string" }
+              - { label: "Sub Title", name: "sub", widget: "string" }
+              - { label: "Hero Title", name: "heroTitle", widget: "string" }
+              - { label: "Hero Lead", name: "heroLead", widget: "text" }
+              - { label: "WhatsApp Link", name: "whatsapp", widget: "string" }
+              - { label: "Register Link", name: "register", widget: "string" }
+
+          - label: "LFL"
+            name: "LFL"
+            widget: "object"
+            fields:
+              - { label: "Brand Name", name: "name", widget: "string" }
+              - { label: "Sub Title", name: "sub", widget: "string" }
+              - { label: "Hero Title", name: "heroTitle", widget: "string" }
+              - { label: "Hero Lead", name: "heroLead", widget: "text" }
+              - { label: "WhatsApp Link", name: "whatsapp", widget: "string" }
+              - { label: "Register Link", name: "register", widget: "string" }

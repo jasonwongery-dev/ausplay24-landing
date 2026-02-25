@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>AFL88 / DFL88 / LFL88 - Landing Page</title>
+  <meta name="description" content="Fast support, exciting bonuses, and a clean mobile-first experience."/>
+  <style>
+    :root{
+      --bg0:#fff7e6;
+      --bg1:#ffffff;
+      --ink:#0c1222;
+      --muted:#5a677f;
+      --card:#ffffffcc;
+      --stroke:#0c122214;
+      --shadow: 0 16px 40px rgba(16,24,40,.10);
+      --shadow2: 0 10px 20px rgba(16,24,40,.10);
+      --radius: 18px;
+
+      /* Brand tokens (default AFL) */
+      --brandName: "AFL88";
+      --brand0:#ff8a00;
+      --brand1:#ff3d00;
+      --brand2:#ffd34a;
+      --accent:#ff6a00;
+      --heroImg:url("assets/afl_welcome_100.png");
+      --gallery1:url("assets/afl_welcome_100.png");
+      --gallery2:url("assets/afl_daily_hourly_free.png");
+      --gallery3:url("assets/afl_happy_hour_18x2.png");
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--ink);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(255,179,71,.55), transparent 60%),
+        radial-gradient(1000px 700px at 110% 0%, rgba(88,171,255,.35), transparent 55%),
+        radial-gradient(900px 700px at 60% 120%, rgba(255,209,102,.45), transparent 60%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      overflow-x:hidden;
+    }
+    a{color:inherit}
+    .wrap{max-width:1100px;margin:0 auto;padding:22px 16px 80px}
+    .topbar{
+      position:sticky;top:0;z-index:20;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.74));
+      border-bottom: 1px solid var(--stroke);
+    }
+    .topbar-inner{max-width:1100px;margin:0 auto;display:flex;gap:14px;align-items:center;justify-content:space-between;padding:12px 16px}
+    .brand-pill{
+      display:flex;align-items:center;gap:10px;
+      padding:10px 12px;border-radius:999px;
+      border:1px solid var(--stroke);
+      background:linear-gradient(180deg,#fff, #ffffffb5);
+      box-shadow: var(--shadow2);
+    }
+    .dot{
+      width:12px;height:12px;border-radius:50%;
+      background: linear-gradient(135deg,var(--brand0),var(--brand1));
+      box-shadow:0 0 0 6px rgba(255,138,0,.12);
+    }
+    .brand-title{font-weight:900;letter-spacing:.3px}
+    .brand-sub{font-size:12px;color:var(--muted);margin-top:2px}
+    .switch{
+      display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end;
+    }
+    .chip{
+      border:1px solid var(--stroke);
+      background:linear-gradient(180deg,#fff,#ffffffb8);
+      padding:9px 12px;border-radius:999px;
+      font-weight:800;font-size:13px;cursor:pointer;
+      transition: transform .12s ease, box-shadow .12s ease;
+      user-select:none;
+    }
+    .chip:hover{transform:translateY(-1px);box-shadow:var(--shadow2)}
+    .chip.active{
+      border-color: rgba(255,106,0,.22);
+      box-shadow: 0 0 0 4px rgba(255,106,0,.12), var(--shadow2);
+    }
+
+    .hero{
+      margin-top:18px;
+      display:grid;grid-template-columns: 1.1fr .9fr;gap:18px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){ .hero{grid-template-columns:1fr;}}
+    .card{
+      border:1px solid var(--stroke);
+      background:var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-left{padding:20px}
+    .tag{
+      display:inline-flex;align-items:center;gap:8px;
+      font-size:12px;font-weight:900;letter-spacing:.3px;
+      color:#111827;
+      padding:8px 10px;border-radius:999px;
+      border:1px solid var(--stroke);
+      background:linear-gradient(180deg,#fff,#ffffffb8);
+    }
+    .tag svg{opacity:.85}
+    h1{
+      margin:14px 0 8px;
+      font-size:44px;line-height:1.06;
+      letter-spacing:-.6px;
+    }
+    @media (max-width: 420px){h1{font-size:38px}}
+    .lead{color:var(--muted);font-size:16px;line-height:1.55;margin:0 0 16px}
+    .bullets{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0 0}
+    @media (max-width: 520px){.bullets{grid-template-columns:1fr}}
+    .bullet{
+      display:flex;gap:10px;align-items:flex-start;
+      padding:12px;border-radius:14px;
+      border:1px solid var(--stroke);
+      background:linear-gradient(180deg,#fff,#ffffffb8);
+    }
+    .bullet .ic{
+      width:34px;height:34px;border-radius:12px;
+      background: linear-gradient(135deg, rgba(255,106,0,.20), rgba(255,211,74,.20));
+      display:grid;place-items:center;flex:0 0 auto;
+      border:1px solid rgba(12,18,34,.08);
+    }
+    .bullet b{display:block;font-size:13px}
+    .bullet span{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:12px 14px;border-radius:14px;
+      border:1px solid var(--stroke);
+      background:linear-gradient(180deg,#fff,#ffffffb8);
+      font-weight:900;text-decoration:none;
+      transition: transform .12s ease, box-shadow .12s ease;
+      cursor:pointer;
+    }
+    .btn:hover{transform:translateY(-1px);box-shadow:var(--shadow2)}
+    .btn-primary{
+      border-color: rgba(255,106,0,.18);
+      color:#101828;
+      background:
+        radial-gradient(120px 80px at 20% 20%, rgba(255,255,255,.65), transparent 60%),
+        linear-gradient(135deg, rgba(255,138,0,.95), rgba(255,61,0,.90));
+      color:#fff;
+      box-shadow: 0 10px 24px rgba(255,106,0,.20);
+    }
+    .btn-primary svg{filter: drop-shadow(0 2px 6px rgba(0,0,0,.25))}
+    .btn-ghost{color:#111827}
+    .btn small{font-weight:800;opacity:.85}
+
+    .hero-right{
+      padding:16px;
+      display:flex;flex-direction:column;gap:12px;
+    }
+    .hero-media{
+      border-radius:16px;
+      border:1px solid rgba(12,18,34,.10);
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+      background:
+        radial-gradient(500px 220px at 20% 0%, rgba(255,211,74,.25), transparent 55%),
+        radial-gradient(500px 260px at 100% 100%, rgba(88,171,255,.18), transparent 55%),
+        linear-gradient(180deg,#fff,#fff);
+    }
+    .hero-media img{width:100%;display:block;object-fit:contain;max-height:520px}
+    .mini-strip{
+      display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;
+    }
+    .mini{
+      border-radius:14px;
+      border:1px solid var(--stroke);
+      background:linear-gradient(180deg,#fff,#ffffffb8);
+      padding:12px;
+      text-align:center;
+    }
+    .mini b{display:block;font-size:13px}
+    .mini span{display:block;font-size:12px;color:var(--muted);margin-top:2px}
+
+    .section{margin-top:22px}
+    .section h2{margin:0 0 10px;font-size:22px;letter-spacing:-.2px}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    @media (max-width: 920px){.grid3{grid-template-columns:1fr}}
+    .bonus{
+      padding:14px;
+      overflow:hidden;
+    }
+    .bonus .thumb{
+      height:160px;border-radius:14px;
+      border:1px solid rgba(12,18,34,.10);
+      overflow:hidden;
+      box-shadow: var(--shadow2);
+      background:#fff;
+      display:grid;place-items:center;
+    }
+    .bonus .thumb img{width:100%;height:100%;object-fit:contain;display:block}
+    .bonus h3{margin:12px 0 6px;font-size:16px}
+    .bonus p{margin:0;color:var(--muted);font-size:13px;line-height:1.45}
+
+    .how{
+      display:grid;grid-template-columns:1.1fr .9fr;gap:14px;
+    }
+    @media (max-width: 900px){.how{grid-template-columns:1fr}}
+    .steps{padding:18px}
+    .steps ol{margin:10px 0 0;padding-left:20px;color:var(--muted);line-height:1.65}
+    .steps li{margin:8px 0}
+    .trust{padding:18px}
+    .trust .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .badge{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:9px 10px;border-radius:999px;
+      border:1px solid var(--stroke);
+      background:linear-gradient(180deg,#fff,#ffffffb8);
+      font-weight:900;font-size:12px;color:#111827;
+    }
+    .badge svg{opacity:.85}
+
+    .footer{margin-top:18px;padding:16px;text-align:center;color:var(--muted);font-size:12px}
+    .footer b{color:#111827}
+
+    /* Floating WhatsApp button */
+    .float{
+      position:fixed;right:18px;bottom:18px;z-index:50;
+      display:flex;align-items:center;gap:10px;
+      padding:12px 14px;border-radius:999px;
+      background:linear-gradient(135deg,#25D366,#1EBE57);
+      color:#fff;text-decoration:none;font-weight:900;
+      box-shadow: 0 16px 40px rgba(16,24,40,.24);
+      border:1px solid rgba(255,255,255,.22);
+    }
+    .float:hover{transform:translateY(-1px)}
+    .float svg{filter: drop-shadow(0 2px 6px rgba(0,0,0,.25))}
+    .float span{display:none}
+    @media (min-width: 560px){.float span{display:inline}}
+
+    /* Small helper */
+    .note{font-size:12px;color:var(--muted);margin-top:10px}
+    .note b{color:#111827}
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand-pill">
+        <div class="dot" aria-hidden="true"></div>
+        <div>
+          <div class="brand-title" id="brandTitle">AFL88</div>
+          <div class="brand-sub" id="brandSub">Fast support • Bonuses • Mobile-friendly</div>
+        </div>
+      </div>
+
+      <div class="switch" role="tablist" aria-label="Select brand">
+        <div class="chip active" role="tab" aria-selected="true" data-brand="AFL">AFL</div>
+        <div class="chip" role="tab" aria-selected="false" data-brand="DFL">DFL</div>
+        <div class="chip" role="tab" aria-selected="false" data-brand="LFL">LFL</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section class="hero">
+      <div class="card hero-left">
+        <div class="tag">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2l2.2 6.7H21l-5.5 4 2.1 6.8L12 15.9 6.4 19.5 8.5 12.7 3 8.7h6.8L12 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+          Play safe, support is here
+        </div>
+
+        <h1 id="heroTitle">Welcome to <span id="brandInline">AFL88</span></h1>
+        <p class="lead" id="heroLead">
+          Clean, fast, and mobile-first. Message us anytime — we’ll guide you step-by-step and help you claim today’s bonuses.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" id="btnRegister" href="#" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M20 7v10a2 2 0 0 1-2 2H8l-4-4V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2Z" stroke="white" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M8 19V7h12" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+            Register Now
+          </a>
+
+          <a class="btn btn-ghost" id="btnWhatsapp" href="https://wa.me/61494630472?text=WELCOME%20TO%20AFL%20%20" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M20 12a8 8 0 0 1-11.7 7.1L4 20l1-4.1A8 8 0 1 1 20 12Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M9.4 9.2c.2-.4.3-.4.6-.4h.5c.1 0 .3 0 .4.2l.8 1.9c.1.2 0 .4-.1.6l-.3.3c-.1.1-.2.3-.1.5.2.5.8 1.3 1.6 1.8.8.5 1.2.6 1.7.7.2 0 .4 0 .5-.1l.6-.7c.1-.1.3-.2.5-.1l2 .9c.2.1.3.2.3.4 0 1.1-.6 2-1.6 2.3-1 .3-2.4.2-4.1-.7-1.7-.9-3.1-2.6-3.6-3.9-.5-1.4-.4-2.5.2-3.6Z" fill="currentColor" opacity=".25"/>
+            </svg>
+            Message on WhatsApp
+          </a>
+
+          <a class="btn btn-ghost" href="#bonuses">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M20 12a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+            See Bonuses
+          </a>
+        </div>
+
+        <div class="bullets">
+          <div class="bullet">
+            <div class="ic">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 2l7 4v6c0 5-3 9-7 10-4-1-7-5-7-10V6l7-4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div><b>Safer experience</b><span>Clear steps + support to guide you.</span></div>
+          </div>
+          <div class="bullet">
+            <div class="ic">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M20 7h-9a2 2 0 0 0-2 2v10h9a2 2 0 0 0 2-2V7Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                <path d="M7 17H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div><b>Bonuses highlight</b><span>Daily, hourly, welcome & more.</span></div>
+          </div>
+        </div>
+
+        
+        </p>
+      </div>
+
+      <div class="card hero-right">
+        <div class="hero-media">
+          <img id="heroImg" src="assets/afl_mascot_01.png" alt="Promo banner">
+        </div>
+        <div class="mini-strip">
+          <div class="mini"><b id="mini1">Welcome Bonus</b><span id="mini1s">Up to 100%</span></div>
+          <div class="mini"><b id="mini2">Daily & Hourly</b><span id="mini2s">Free claims</span></div>
+          <div class="mini"><b id="mini3">Happy Hour $36</b><span id="mini3s">$18 × 2</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="bonuses">
+      <h2>Featured bonuses</h2>
+      <div class="grid3">
+        <div class="card bonus">
+          <div class="thumb"><img id="g1" src="assets/afl_welcome_100.png" alt="Bonus 1"></div>
+          <h3 id="b1t">Welcome Bonus 100%</h3>
+          <p id="b1d">Claim your welcome offer and start strong.</p>
+        </div>
+
+        <div class="card bonus">
+          <div class="thumb"><img id="g2" src="assets/afl_daily_hourly_free.png" alt="Bonus 2"></div>
+          <h3 id="b2t">Daily & Hourly Free</h3>
+          <p id="b2d">More chances to claim throughout the day.</p>
+        </div>
+
+        <div class="card bonus">
+          <div class="thumb"><img id="g3" src="assets/afl_happy_hour_18x2.png" alt="Bonus 3"></div>
+          <h3 id="b3t">Happy Hour $18 × 2</h3>
+          <p id="b3d">Two daily happy-hour freebies (subject to availability).</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section how">
+      <div class="card steps">
+        <h2>How to get started</h2>
+        <ol id="stepsList">
+          <li>Tap <b>Register Now</b> to create your account.</li>
+          <li>Message us on WhatsApp if you need help or want to claim bonuses.</li>
+          <li>We’ll guide you step-by-step and confirm the bonus details.</li>
+        </ol>
+      </div>
+
+      <div class="card trust">
+        <h2>Why players choose us</h2>
+        <div class="row">
+          <div class="badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 2l7 4v6c0 5-3 9-7 10-4-1-7-5-7-10V6l7-4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            </svg>
+            Support guidance
+          </div>
+          <div class="badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 12h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M12 4v16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+            Easy steps
+          </div>
+          <div class="badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 12l4 4 8-10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Clear bonus info
+          </div>
+        </div>
+
+        <div class="cta-row" style="margin-top:14px">
+          <a class="btn btn-primary" id="btnRegister2" href="#" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M20 7v10a2 2 0 0 1-2 2H8l-4-4V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2Z" stroke="white" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M8 19V7h12" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+            Register Now
+          </a>
+          <a class="btn btn-ghost" id="btnWhatsapp2" href="https://wa.link/d28jl2" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M20 12a8 8 0 0 1-11.7 7.1L4 20l1-4.1A8 8 0 1 1 20 12Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            </svg>
+            Message Us
+          </a>
+        </div>
+
+        <p class="note" id="remark">
+          <b>Remark:</b> A valid registration requires signing up via your personal referral link and completing a successful first deposit. Registration alone does not count.
+        </p>
+      </div>
+    </section>
+
+    <div class="card footer">
+      <div><b id="footBrand">AFL88</b> • If you have any questions, message us anytime.</div>
+      <div style="margin-top:6px">© <span id="year"></span> • Single-file landing page (no external libraries)</div>
+    </div>
+  </div>
+
+  <a class="float" id="floatWA" href="https://wa.link/x8671n" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M20 12a8 8 0 0 1-11.7 7.1L4 20l1-4.1A8 8 0 1 1 20 12Z" stroke="white" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M9.4 9.2c.2-.4.3-.4.6-.4h.5c.1 0 .3 0 .4.2l.8 1.9c.1.2 0 .4-.1.6l-.3.3c-.1.1-.2.3-.1.5.2.5.8 1.3 1.6 1.8.8.5 1.2.6 1.7.7.2 0 .4 0 .5-.1l.6-.7c.1-.1.3-.2.5-.1l2 .9c.2.1.3.2.3.4 0 1.1-.6 2-1.6 2.3-1 .3-2.4.2-4.1-.7-1.7-.9-3.1-2.6-3.6-3.9-.5-1.4-.4-2.5.2-3.6Z" fill="white" opacity=".22"/>
+    </svg>
+    <span>WhatsApp</span>
+  </a>
+
+  <script>
+    // === CONFIG ===
+    // Default embedded config (fallback if content/landing.json not found)
+    let REGISTER_LINKS = {
+      AFL: "https://afl88.com/RFFBFB026",
+      DFL: "https://dfl88.com/RFDFLFB026",
+      LFL: "https://lfl88.com/RFLFLFB026"
+    };
+
+    let WHATSAPP_LINKS = {
+      AFL: "https://wa.me/61494630472?text=WELCOME%20TO%20AFL%20%20",
+      DFL: "https://wa.link/d28jl2",
+      LFL: "https://wa.link/x8671n"
+    };
+
+    let BRANDS = {
+      AFL: {
+        name: "AFL88",
+        sub: "Australia players • Fast support • Bonus highlights",
+        brand0: "#ff8a00",
+        brand1: "#ff3d00",
+        brand2: "#ffd34a",
+        accent: "#ff6a00",
+        heroTitle: "Welcome to AFL88",
+        heroLead: "Clean, fast, and mobile-first. Message us anytime — we’ll guide you step-by-step and help you claim today’s bonuses.",
+        heroImg: "assets/afl_mascot_01.png",
+        mini: [
+          ["Welcome Bonus","Up to 100%"],
+          ["Daily & Hourly","Free claims"],
+          ["Happy Hour","$18 × 2"]
+        ],
+        bonuses: [
+          ["Welcome Bonus 100%","Claim your welcome offer and start strong.","assets/afl_welcome_100.png"],
+          ["Daily & Hourly Free","More chances to claim throughout the day.","assets/afl_daily_hourly_free.png"],
+          ["Happy Hour $18 × 2","Two daily happy-hour freebies (subject to availability).","assets/afl_happy_hour_18x2.png"]
+        ]
+      },
+      DFL: {
+        name: "DFL88",
+        sub: "Blue theme • Fast support • Daily bonuses",
+        brand0: "#1e88ff",
+        brand1: "#005bff",
+        brand2: "#ffd34a",
+        accent: "#1e88ff",
+        heroTitle: "Welcome to DFL88",
+        heroLead: "Brighter layout with clean info. Tap bonuses, then message us — we’ll help you claim what’s available today.",
+        heroImg: "assets/dfl_mascot_clean.jpg",
+        mini: [
+          ["Welcome Bonus","Up to 100%"],
+          ["Daily & Hourly","Free claims"],
+          ["Social Task","$18"]
+        ],
+        bonuses: [
+          ["Welcome Bonus 100%","Start with the welcome offer.","assets/dfl_welcome_100.png"],
+          ["Daily & Hourly Free","Claim more often during the day.","assets/dfl_daily_hourly_free.png"],
+          ["Social Media Task $18","Complete the task and claim your $18.","assets/dfl_social_free_18.png"]
+        ]
+      },
+      LFL: {
+        name: "LFL88",
+        sub: "Red & gold • Bold promos • Simple steps",
+        brand0: "#ff2d2d",
+        brand1: "#ff8a00",
+        brand2: "#ffd34a",
+        accent: "#ff2d2d",
+        heroTitle: "Welcome to LFL88",
+        heroLead: "Big visuals, clean steps. Register, then message us for quick help and today’s active bonuses.",
+        heroImg: "assets/lfl_mascot_lego.jpg",
+        mini: [
+          ["REGISTER FREE","$88"],
+          ["WELCOME BONUS","100%"],
+          ["SOCIAL TASK","$18"]
+        ],
+        bonuses: [
+          ["WELCOME BONUS 100%","More chances to claim throughout the day.","assets/lfl_welcome_bonus_100%.png"],
+          ["DAILY & HOURLY FREE","Unlimit Bonus Everyday.","assets/lfl_social_free_18.png"],
+          ["SOCIAL MEDIA FREE $18","Complete the task & Get Free.","assets/lfl_register_free_88.png"]
+        ]
+      }
+    };
+
+    // === UI BINDINGS ===
+    const chips = document.querySelectorAll(".chip");
+    const brandTitle = document.getElementById("brandTitle");
+    const brandInline = document.getElementById("brandInline");
+    const brandSub = document.getElementById("brandSub");
+    const heroTitle = document.getElementById("heroTitle");
+    const heroLead = document.getElementById("heroLead");
+    const heroImg = document.getElementById("heroImg");
+
+    const mini1 = document.getElementById("mini1"), mini1s = document.getElementById("mini1s");
+    const mini2 = document.getElementById("mini2"), mini2s = document.getElementById("mini2s");
+    const mini3 = document.getElementById("mini3"), mini3s = document.getElementById("mini3s");
+
+    const b1t = document.getElementById("b1t"), b1d = document.getElementById("b1d"), g1 = document.getElementById("g1");
+    const b2t = document.getElementById("b2t"), b2d = document.getElementById("b2d"), g2 = document.getElementById("g2");
+    const b3t = document.getElementById("b3t"), b3d = document.getElementById("b3d"), g3 = document.getElementById("g3");
+
+    const btnRegister = document.getElementById("btnRegister");
+    const btnRegister2 = document.getElementById("btnRegister2");
+    const btnWhatsapp = document.getElementById("btnWhatsapp");
+    const btnWhatsapp2 = document.getElementById("btnWhatsapp2");
+    const floatWA = document.getElementById("floatWA");
+
+    const footBrand = document.getElementById("footBrand");
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function setVars(k, v){ document.documentElement.style.setProperty(k, v); }
+
+    // --- Load CMS content (optional) ---
+    async function loadCMSContent(){
+      try{
+        const res = await fetch("content/landing.json", { cache: "no-store" });
+        if(!res.ok) return; // keep defaults
+        const data = await res.json();
+
+        if(data.register_links) REGISTER_LINKS = data.register_links;
+        if(data.whatsapp_links) WHATSAPP_LINKS = data.whatsapp_links;
+        if(data.brands) BRANDS = data.brands;
+      }catch(e){
+        // Keep defaults if CMS not ready
+        console.warn("[CMS] content/landing.json not loaded, using defaults.", e);
+      }
+    }
+
+    function applyBrand(key){
+      const b = BRANDS[key];
+      if(!b) return;
+
+      // Chips
+      chips.forEach(c=>{
+        const active = c.dataset.brand === key;
+        c.classList.toggle("active", active);
+        c.setAttribute("aria-selected", active ? "true" : "false");
+      });
+
+      // Brand tokens
+      setVars("--brand0", b.brand0);
+      setVars("--brand1", b.brand1);
+      setVars("--brand2", b.brand2);
+      setVars("--accent", b.accent);
+
+      // Headings
+      brandTitle.textContent = b.name;
+      brandInline.textContent = b.name;
+      brandSub.textContent = b.sub;
+      heroTitle.textContent = b.heroTitle;
+      heroLead.textContent = b.heroLead;
+      footBrand.textContent = b.name;
+
+      // Images
+      heroImg.src = b.heroImg;
+
+      // Mini strip
+      mini1.textContent = b.mini[0][0]; mini1s.textContent = b.mini[0][1];
+      mini2.textContent = b.mini[1][0]; mini2s.textContent = b.mini[1][1];
+      mini3.textContent = b.mini[2][0]; mini3s.textContent = b.mini[2][1];
+
+      // Bonus cards
+      b1t.textContent = b.bonuses[0][0]; b1d.textContent = b.bonuses[0][1]; g1.src = b.bonuses[0][2];
+      b2t.textContent = b.bonuses[1][0]; b2d.textContent = b.bonuses[1][1]; g2.src = b.bonuses[1][2];
+      b3t.textContent = b.bonuses[2][0]; b3d.textContent = b.bonuses[2][1]; g3.src = b.bonuses[2][2];
+
+      // Register link
+      const reg = REGISTER_LINKS[key] || "#";
+      btnRegister.href = reg;
+      btnRegister2.href = reg;
+
+      // WhatsApp links (3 places)
+      const wa = WHATSAPP_LINKS[key] || "#";
+      if(btnWhatsapp) btnWhatsapp.href = wa;
+      if(btnWhatsapp2) btnWhatsapp2.href = wa;
+      if(floatWA) floatWA.href = wa;
+    }
+
+    chips.forEach(c=>{
+      c.addEventListener("click", ()=>applyBrand(c.dataset.brand));
+    });
+
+    // Default
+    loadCMSContent().then(()=>applyBrand("AFL"));
+  </script>
+</body>
+</html>
