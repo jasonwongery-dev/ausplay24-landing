@@ -25,14 +25,35 @@
         "heroImg": "assets/afl_mascot_01.png"
       },
       "mini": [
-        { "left": "Welcome Bonus", "right": "Up to 100%" },
-        { "left": "Daily & Hourly", "right": "Free claims" },
-        { "left": "Happy Hour", "right": "$18 × 2" }
+        {
+          "left": "Welcome Bonus",
+          "right": "Up to 100%"
+        },
+        {
+          "left": "Daily & Hourly",
+          "right": "Free claims"
+        },
+        {
+          "left": "Happy Hour",
+          "right": "$18 × 2"
+        }
       ],
       "bonuses": [
-        { "title": "Welcome Bonus 100%", "desc": "Claim your welcome offer and start strong.", "img": "assets/afl_welcome_100.png" },
-        { "title": "Daily & Hourly Free", "desc": "More chances to claim throughout the day.", "img": "assets/afl_daily_hourly_free.png" },
-        { "title": "Happy Hour $18 × 2", "desc": "Two daily happy-hour freebies (subject to availability).", "img": "assets/afl_happy_hour_18x2.png" }
+        {
+          "title": "Welcome Bonus 100%",
+          "desc": "Claim your welcome offer and start strong.",
+          "img": "assets/afl_welcome_100.png"
+        },
+        {
+          "title": "Daily & Hourly Free",
+          "desc": "More chances to claim throughout the day.",
+          "img": "assets/afl_daily_hourly_free.png"
+        },
+        {
+          "title": "Happy Hour $18 × 2",
+          "desc": "Two daily happy-hour freebies (subject to availability).",
+          "img": "assets/afl_happy_hour_18x2.png"
+        }
       ]
     },
     {
@@ -55,14 +76,35 @@
         "heroImg": "assets/dfl_mascot_clean.jpg"
       },
       "mini": [
-        { "left": "Welcome Bonus", "right": "Up to 100%" },
-        { "left": "Daily & Hourly", "right": "Free claims" },
-        { "left": "Social Task", "right": "$18" }
+        {
+          "left": "Welcome Bonus",
+          "right": "Up to 100%"
+        },
+        {
+          "left": "Daily & Hourly",
+          "right": "Free claims"
+        },
+        {
+          "left": "Social Task",
+          "right": "$18"
+        }
       ],
       "bonuses": [
-        { "title": "Welcome Bonus 100%", "desc": "Start with the welcome offer.", "img": "assets/dfl_welcome_100.png" },
-        { "title": "Daily & Hourly Free", "desc": "Claim more often during the day.", "img": "assets/dfl_daily_hourly_free.png" },
-        { "title": "Social Media Task $18", "desc": "Complete the task and claim your $18.", "img": "assets/dfl_social_free_18.png" }
+        {
+          "title": "Welcome Bonus 100%",
+          "desc": "Start with the welcome offer.",
+          "img": "assets/dfl_welcome_100.png"
+        },
+        {
+          "title": "Daily & Hourly Free",
+          "desc": "Claim more often during the day.",
+          "img": "assets/dfl_daily_hourly_free.png"
+        },
+        {
+          "title": "Social Media Task $18",
+          "desc": "Complete the task and claim your $18.",
+          "img": "assets/dfl_social_free_18.png"
+        }
       ]
     },
     {
@@ -85,14 +127,35 @@
         "heroImg": "assets/lfl_mascot_lego.jpg"
       },
       "mini": [
-        { "left": "REGISTER FREE", "right": "$88" },
-        { "left": "WELCOME BONUS", "right": "100%" },
-        { "left": "SOCIAL TASK", "right": "$18" }
+        {
+          "left": "REGISTER FREE",
+          "right": "$88"
+        },
+        {
+          "left": "WELCOME BONUS",
+          "right": "100%"
+        },
+        {
+          "left": "SOCIAL TASK",
+          "right": "$18"
+        }
       ],
       "bonuses": [
-        { "title": "WELCOME BONUS 100%", "desc": "Start strong with welcome offer.", "img": "assets/lfl_welcome_bonus_100%.png" },
-        { "title": "DAILY & HOURLY FREE", "desc": "Unlimited bonus everyday.", "img": "assets/lfl_daily_hourly_free.png" },
-        { "title": "SOCIAL MEDIA FREE $18", "desc": "Complete the task & get free.", "img": "assets/lfl_social_free_18.png" }
+        {
+          "title": "WELCOME BONUS 100%",
+          "desc": "Start strong with welcome offer.",
+          "img": "/assets/uploads/lfl_welcome_bonus_100-.png"
+        },
+        {
+          "title": "DAILY & HOURLY FREE",
+          "desc": "Unlimited bonus everyday.",
+          "img": "/assets/uploads/lfl_social_free_18.png"
+        },
+        {
+          "title": "SOCIAL MEDIA FREE $18",
+          "desc": "Complete the task & get free.",
+          "img": "assets/lfl_social_free_18.png"
+        }
       ]
     }
   ]
